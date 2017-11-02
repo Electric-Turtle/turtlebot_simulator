@@ -7,8 +7,9 @@
   <param name="robot_description" command="$(arg urdf_file)" />
   
   <!-- Gazebo model spawner -->
+
   <node name="spawn_turtlebot_model" pkg="gazebo_ros" type="spawn_model"
-        args="$(optenv ROBOT_INITIAL_POSE) -unpause -urdf -param robot_description -model mobile_base"/>
+        args="$(optenv ROBOT_INITIAL_POSE) -unpause -urdf -param robot_description -model mobile_base -x 1.5 -y 1.0 -Y 1.57"/>
   
   <!-- Velocity muxer -->
   <node pkg="nodelet" type="nodelet" name="mobile_base_nodelet_manager" args="manager"/>
